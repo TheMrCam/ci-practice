@@ -16,6 +16,7 @@ jobs:
       - uses: JS-DevTools/npm-publish@v3
         with:
           token: ${{ secrets.NPM_TOKEN }}
+          access: 'public'
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
@@ -23,7 +24,7 @@ jobs:
           token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref }}
           release_name: Release ${{ github.ref }}
-          body: ""
+          body: ''
           generate_release_notes: true
           draft: true
           prerelease: false
