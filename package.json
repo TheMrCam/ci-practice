@@ -4,7 +4,6 @@
   "description": "Testing GitHub Actions for releases",
   "main": "lib/index.js",
   "type": "module",
-  "private": true,
   "scripts": {
     "build": "rollup -c",
     "test": "vitest",

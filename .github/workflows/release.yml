@@ -27,11 +27,3 @@ jobs:
           generate_release_notes: true
           draft: true
           prerelease: false
-        # env:
-          # GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-        # with:
-          # tag_name: ${{ github.ref }}
-          # release_name: Release ${{ github.ref }}
-          # body: ""
-          # draft: true
-          # prerelease: false
