@@ -37,7 +37,7 @@ jobs:
           body: |
             ${{ steps.build_changelog.outputs.changelog }}
 
-            Full changelog: ${{ github.server_url }}/${{ github.repository }}/compare/${{ steps.build_changelog.outputs.fromTag }}...${{ steps.build_changelog.outputs.toTag }}
-            NPM release: https://npmjs.com/package/${{ steps.publish.outputs.name }}/v/${{ steps.publish.outputs.version }}
+            **Full changelog:** ${{ github.server_url }}/${{ github.repository }}/compare/${{ steps.build_changelog.outputs.fromTag }}...${{ steps.build_changelog.outputs.toTag }}
+            **NPM release:** https://npmjs.com/package/${{ steps.publish.outputs.name }}/v/${{ steps.publish.outputs.version }}
           draft: true
           prerelease: ${{ contains(github.ref_name, '-') }}
