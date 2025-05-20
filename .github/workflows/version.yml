@@ -18,15 +18,15 @@ jobs:
     name: Push ${{ inputs.version }} tag
     runs-on: ubuntu-latest
 
-    permissions:
-      contents: write
+    # permissions:
+      # contents: write
 
     steps:
     - name: Checkout branch
       uses: actions/checkout@v4
-      # with:
-      # # see https://github.com/orgs/community/discussions/25617#discussioncomment-3248494
-        # token: ${{ secrets.RELEASE_TOKEN }}
+      with:
+      # see https://github.com/orgs/community/discussions/25617#discussioncomment-3248494
+        token: ${{ secrets.RELEASE_TOKEN }}
     - uses: actions/setup-node@v4
       with:
         node-version: 22.x
