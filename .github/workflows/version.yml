@@ -34,6 +34,6 @@ jobs:
     # - name: Build
       # run: npm run build
     - name: NPM version
-      run: echo "version=$(npm version <version>)" >> $GITHUB_ENV
+      run: echo "version=$(npm version ${{ inputs.version }})" >> $GITHUB_ENV
     - name: Git push
       run: git push && git push origin ${{ env.version }}
