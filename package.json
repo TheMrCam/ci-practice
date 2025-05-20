@@ -1,6 +1,6 @@
 {
   "name": "@themrcam/ci-practice",
-  "version": "0.0.6",
+  "version": "0.0.7",
   "description": "Testing GitHub Actions for releases",
   "main": "lib/index.js",
   "type": "module",
