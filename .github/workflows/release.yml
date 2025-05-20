@@ -18,9 +18,19 @@ jobs:
         uses: actions/checkout@v4
       - run: npm install
       - uses: JS-DevTools/npm-publish@v3
+        id: release
         with:
           token: ${{ secrets.NPM_TOKEN }}
           access: 'public'
+      - name: Test npm-publish output
+        run: |
+          echo ${{ steps.publish.outputs }}
+          echo ${{ steps.publish.outputs.id }}
+          echo ${{ steps.publish.outputs.name }}
+          echo ${{ steps.publish.outputs.version }}
+          echo ${{ steps.publish.outputs.tag }}
+          echo ${{ steps.publish.outputs.access }}
+          echo ${{ steps.publish.outputs.registry }}
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
@@ -29,5 +39,7 @@ jobs:
           tag_name: ${{ github.ref }}
           name: Release ${{ github.ref_name }}
           generate_release_notes: true
+          body: |
+            NPM release: https://npmjs.com/package/${{ steps.publish.outputs.name }}/v/${{ steps.publish.outputs.version }}
           draft: true
           prerelease: false
