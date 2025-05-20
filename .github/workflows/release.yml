@@ -1,4 +1,4 @@
-name: Release
+name: Publish release
 
 on:
   push:
@@ -27,6 +27,9 @@ jobs:
       - name: Create release notes
         id: build_changelog
         uses: mikepenz/release-changelog-builder-action@v5
+        with:
+          configuration: 'changelog.json'
+          ignorePreReleases: true
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
