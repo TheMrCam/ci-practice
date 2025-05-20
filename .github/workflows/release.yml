@@ -18,11 +18,11 @@ jobs:
         uses: actions/checkout@v4
       - run: npm install
       - uses: JS-DevTools/npm-publish@v3
-        id: release
+        id: publish
         with:
           token: ${{ secrets.NPM_TOKEN }}
           access: 'public'
-      - name: Test npm-publish output
+      - name: Log npm-publish output
         run: |
           echo ${{ steps.publish.outputs }}
           echo ${{ steps.publish.outputs.id }}
