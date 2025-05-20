@@ -1,5 +1,5 @@
 export function init() {
-  return 'Hello, World!'
+  return 'Hello, Word!'
 }
 
 export default init
