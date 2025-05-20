@@ -27,7 +27,7 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
-    - name: Check prerelease identifier
+    - name: Invalid prerelease identifier
       if: ${{ startsWith(github.event.inputs.version, 'pre') && !github.event.inputs.preId }}
       run: |
         echo "Error: 'preId' input is required with 'pre-*' version."

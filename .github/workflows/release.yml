@@ -12,6 +12,7 @@ jobs:
     
     permissions:
       contents: write
+      pull-requests: read
 
     steps:
       - name: Checkout code
@@ -26,19 +27,17 @@ jobs:
       - name: Create release notes
         id: build_changelog
         uses: mikepenz/release-changelog-builder-action@v5
-        # with:
-          # token: ${{ github.token }}
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2
         with:
-          # token: ${{ secrets.GITHUB_TOKEN }}
           tag_name: ${{ github.ref }}
           name: Release ${{ github.ref_name }}
-          # generate_release_notes: true
+          # generate_release_notes: true # replaced with build_changelog
           body: |
             ${{ steps.build_changelog.outputs.changelog }}
 
+            Full changelog: ${{ github.server_url }}/${{ github.repository }}/compare/${{ steps.build_changelog.outputs.fromTag }}...${{ steps.build_changelog.outputs.toTag }}
             NPM release: https://npmjs.com/package/${{ steps.publish.outputs.name }}/v/${{ steps.publish.outputs.version }}
           draft: true
           prerelease: ${{ contains(github.ref_name, '-') }}
