@@ -17,15 +17,15 @@
       "labels": ["documentation", "docs"]
     },
     {
-      "title": "## 🛠️ Dependencies & Maintenance",
-      "labels": ["dependencies", "maintenance"]
+      "title": "## 🛠️ Infrastructure",
+      "labels": ["dependencies", "maintenance", "ci"]
     },
     {
       "title": "## 💬 Uncategorized",
       "labels": []
     }
   ],
-  "ignore_labels": ["ignore"],
+  "ignore_labels": ["ignore", "ci-ignore"],
   "template": "#{{CHANGELOG}}",
   "pr_template": "- #{{TITLE}} (##{{NUMBER}} by @#{{AUTHOR}})"
 }
