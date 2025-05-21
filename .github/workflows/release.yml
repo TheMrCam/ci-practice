@@ -31,7 +31,7 @@ jobs:
         uses: mikepenz/release-changelog-builder-action@v5
         with:
           configuration: '.github/workflows/changelog.json'
-          ignorePreReleases: true
+          ignorePreReleases: ${{ ! contains(github.ref_name, '-') }}
       - name: Create Release
         id: create_release
         uses: softprops/action-gh-release@v2

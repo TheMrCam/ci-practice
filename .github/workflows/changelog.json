@@ -1,6 +1,10 @@
 {
   "categories": [
     {
+      "title": "## ⚙️ Breaking",
+      "labels": ["breaking"]
+    },
+    {
       "title": "## 🚀 Features",
       "labels": ["feature", "enhancement"]
     },
@@ -13,10 +17,15 @@
       "labels": ["documentation", "docs"]
     },
     {
-      "title": "## 🧪 Tests",
-      "labels": ["test"]
+      "title": "## 🛠️ Dependencies & Maintenance",
+      "labels": ["dependencies", "maintenance"]
+    },
+    {
+      "title": "## 💬 Uncategorized",
+      "labels": []
     }
   ],
-  "template": "#{{CHANGELOG}}\n\n<details>\n<summary>Uncategorized</summary>\n\n#{{UNCATEGORIZED}}\n</details>",
-  "pr_template": "- #{{TITLE}} (##{{NUMBER}} by #{{AUTHOR}})"
+  "ignore_labels": ["ignore"],
+  "template": "#{{CHANGELOG}}",
+  "pr_template": "- #{{TITLE}} (##{{NUMBER}} by @#{{AUTHOR}})"
 }
