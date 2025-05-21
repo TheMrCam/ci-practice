@@ -2,4 +2,4 @@
 
 This repository exists so I can try things out with GitHub Actions.
 
-This is a new line.
+Don't forget to delete the npm packages when you're done here :)
