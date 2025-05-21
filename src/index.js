@@ -1,5 +1,5 @@
 export function init() {
-  return 'Hello, Word!'
+  return 'Hello, World!'
 }
 
 export function greet(name) {
